@@ -73,6 +73,30 @@ for server in ServerNames:
         line = re.sub(&apos;Job_Name&apos;,server, line.rstrip())  # Set the correct job Name
         print(line)</command>
     </hudson.plugins.python.Python>
+    <javaposse.jobdsl.plugin.ExecuteDslScripts plugin="job-dsl@1.40">
+      <scriptText>nestedView(&apos;project-a&apos;) {
+    views {
+        listView(&apos;AS Deployers&apos;) {
+            jobs {
+                regex(/AS.*/)
+            }
+            columns {
+                status()
+                weather()
+                name()
+                lastSuccess()
+                lastFailure()
+            }
+        }
+    }
+}</scriptText>
+      <usingScriptText>true</usingScriptText>
+      <ignoreExisting>false</ignoreExisting>
+      <removedJobAction>IGNORE</removedJobAction>
+      <removedViewAction>IGNORE</removedViewAction>
+      <lookupStrategy>JENKINS_ROOT</lookupStrategy>
+      <additionalClasspath></additionalClasspath>
+    </javaposse.jobdsl.plugin.ExecuteDslScripts>
   </builders>
   <publishers>
     <hudson.tasks.ArtifactArchiver>
