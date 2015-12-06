@@ -38,14 +38,18 @@ def thr = Thread.currentThread()
 def build = thr?.executable
 
 
+println REGEX is build.environment.get(&quot;currentJobName&quot;)
+
+//Full_Name = &apos;AS_Deployer_&apos; + build.environment.get(&quot;currentJobName&quot;)
 
 
-REGEX = build.environment.get(&quot;Include_Regex&quot;)
-d_REGEX = build.environment.get(&quot;Include_Regex&quot;)
+
+//REGEX = build.environment.get(&quot;Include_Regex&quot;)
+//d_REGEX = build.environment.get(&quot;Include_Regex&quot;)
 
 println(&quot;The Regex is ${REGEX}&quot;);
 
-println(&quot;The n_REGEX is ${n_REGEX}&quot;);
+//println(&quot;The n_REGEX is ${n_REGEX}&quot;);
 
 for (item in jenkins.items){
    println(&quot;\t ${item.name}&quot;);
