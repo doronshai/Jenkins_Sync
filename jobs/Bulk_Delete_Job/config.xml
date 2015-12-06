@@ -39,11 +39,12 @@ def build = thr?.executable
 
 String REGEX = build.environment.get(&quot;Include_Regex&quot;)
 
-println REGEX is build.environment.get(&quot;Include_Regex&quot;)
+println &quot;REGEX is &quot; + build.environment.get(&quot;Include_Regex&quot;)
 
 
 Full_Name = &quot;&apos;&quot; + build.environment.get(&quot;Include_Regex&quot;) + &quot;&apos;&quot; 
 
+println &quot;Full_Name is &quot; + build.environment.get(&quot;Full_Name&quot;)
 
 for (item in jenkins.items){
    println(&quot;\t ${item.name}&quot;);
