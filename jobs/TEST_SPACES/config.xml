@@ -35,12 +35,13 @@ import urllib2
 import os
 import re
 
-tmpStringArray = os.environ[&apos;Servers_List&apos;].split(&apos;,&apos;)
+#tmpStringArray = os.environ[&apos;Servers_List&apos;].split(&apos;,&apos;)
+tmpStringArray = str(os.environ[&apos;Servers_List&apos;]).strip().split(&apos;,&apos;)
 
 
 #ServerNamesTrimmed = re.sub(&apos; &apos;, &apos;&apos;, str(tmpStringArray))
 
-ServerNamesTrimmed = str(tmpStringArray).strip()
+ServerNamesTrimmed = str(tmpStringArray)
 
 for server in ServerNamesTrimmed:
     print (server)</command>
