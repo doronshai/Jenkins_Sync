@@ -33,19 +33,24 @@ from jenkinsapi.job import *
 import os.path
 import urllib2
 import os
-import re
 
-#tmpStringArray = os.environ[&apos;Servers_List&apos;].split(&apos;,&apos;)
+#jenkisURL = Jenkins(&apos;http://52.16.252.198:8080/&apos;)
+
 tmpStringArray = str(os.environ[&apos;Servers_List&apos;]).strip().split(&apos;,&apos;)
 
-print (tmpStringArray)
+print (tmpStringArray)    
 
-#ServerNamesTrimmed = re.sub(&apos; &apos;, &apos;&apos;, str(tmpStringArray))
+ServerNames = tmpStringArray
 
-ServerNamesTrimmed = str(tmpStringArray)
+for server in ServerNames:
+#    jenkisURL.build_job(&apos;CreateASDeploymentJob&apos;, {&apos;currentJobName&apos;: server})
+	print (&quot;============================&quot;)        
+    print (server)        
+    
+    
+#tmpStringArray = str(os.environ[&apos;Servers_List&apos;]).strip().split(&apos;,&apos;)
 
-for server in ServerNamesTrimmed:
-    print (server)</command>
+#print (tmpStringArray)    </command>
     </hudson.plugins.python.Python>
   </builders>
   <publishers/>
