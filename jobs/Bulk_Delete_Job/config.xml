@@ -49,7 +49,8 @@ println &quot;Full_Name is &quot; + Full_Name
 for (item in jenkins.items){
    println(&quot;\t ${item.name}&quot;);
    // Ignore project that contains freeze or patch case insensitive
-   if (item.name ==~ /AS.*/){
+//   if (item.name ==~ /AS.*/){
+   if (item.name ==~ Full_Name.toString()){  
        item.delete()
        println(&quot;AAAAA&quot;);
     }
