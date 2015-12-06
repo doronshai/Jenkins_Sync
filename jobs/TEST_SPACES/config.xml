@@ -37,11 +37,11 @@ import re
 
 tmpStringArray = os.environ[&apos;Servers_List&apos;].split(&apos;,&apos;)
 
-ServerNamesTrimmed = re.sub(&apos;[\s+]&apos;, &apos;&apos;, tmpStringArray)
+String ServerNamesTrimmed = re.sub(&apos;[\s+]&apos;, &apos;&apos;, tmpStringArray)
 
 #ServerNames = tmpStringArray.strip()
 
-for server in ServerNames:
+for server in ServerNamesTrimmed:
     print (server)</command>
     </hudson.plugins.python.Python>
   </builders>
