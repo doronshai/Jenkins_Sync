@@ -17,9 +17,9 @@
         <command>hudson.PluginWrapper scmPluginWrapper = jenkins.model.Jenkins.getInstance().getPluginManager().getPlugin(&quot;scm-sync-configuration&quot;);
 java.util.List&lt;?&gt; commitsQueue = scmPluginWrapper.getPlugin().business.commitsQueue;
 println(commitsQueue);
-println(=============================================================================================);
-println(=============================================================================================);
-println(=============================================================================================);
+println(&apos;=============================================================================================&apos;);
+println(&apos;=============================================================================================&apos;);
+println(&apos;=============================================================================================&apos;);
 //commitsQueue.remove(0);
 println(commitsQueue);</command>
       </scriptSource>
