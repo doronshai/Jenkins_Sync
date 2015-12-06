@@ -43,7 +43,7 @@ print (tmpStringArray)
 ServerNames = tmpStringArray
 
 for server in ServerNames:
-#    jenkisURL.build_job(&apos;CreateASDeploymentJob&apos;, {&apos;currentJobName&apos;: server})
+#   jenkisURL.build_job(&apos;CreateASDeploymentJob&apos;, {&apos;currentJobName&apos;: server})
 	print (&quot;============================&quot;)        
     print (server)
 
