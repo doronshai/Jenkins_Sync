@@ -36,9 +36,9 @@ import os
 
 
 
-tmpStringArray = os.environ[&apos;Servers_List&apos;].split(&apos;,&apos;).trim()
+tmpStringArray = os.environ[&apos;Servers_List&apos;].split(&apos;,&apos;)
 
-ServerNames = tmpStringArray
+ServerNames = tmpStringArray.strip()
 
 for server in ServerNames:
     print (server)</command>
