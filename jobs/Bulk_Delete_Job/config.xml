@@ -3,7 +3,17 @@
   <actions/>
   <description></description>
   <keepDependencies>false</keepDependencies>
-  <properties/>
+  <properties>
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+        <hudson.model.StringParameterDefinition>
+          <name>Include_Regex</name>
+          <description></description>
+          <defaultValue>/AS.*/</defaultValue>
+        </hudson.model.StringParameterDefinition>
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
+  </properties>
   <scm class="hudson.scm.NullSCM"/>
   <canRoam>true</canRoam>
   <disabled>false</disabled>
@@ -11,7 +21,44 @@
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
   <triggers/>
   <concurrentBuild>false</concurrentBuild>
-  <builders/>
+  <builders>
+    <hudson.plugins.groovy.SystemGroovy plugin="groovy@1.27">
+      <scriptSource class="hudson.plugins.groovy.StringScriptSource">
+        <command>import hudson.model.*
+import hudson.node_monitors.*
+import hudson.slaves.*
+import java.util.concurrent.*
+
+jenkins = Hudson.instance
+
+// get current thread / Executor
+def thr = Thread.currentThread()
+
+// get current build
+def build = thr?.executable
+
+
+String REGEX = build.environment.get(&quot;Include_Regex&quot;)
+
+
+now=Calendar.instance;
+
+println(&quot;The build is run at ${now.time}&quot;);
+
+for (item in jenkins.items){
+   println(&quot;\t ${item.name}&quot;);
+   // Ignore project that contains freeze or patch case insensitive
+   if (item.name ==~ $Include_Regex){
+       item.delete()
+    }
+   
+} 
+</command>
+      </scriptSource>
+      <bindings></bindings>
+      <classpath></classpath>
+    </hudson.plugins.groovy.SystemGroovy>
+  </builders>
   <publishers/>
   <buildWrappers/>
 </project>
