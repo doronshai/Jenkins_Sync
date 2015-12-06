@@ -48,7 +48,7 @@ Full_Name = &quot;&apos;&quot; + build.environment.get(&quot;Include_Regex&quot;
 for (item in jenkins.items){
    println(&quot;\t ${item.name}&quot;);
    // Ignore project that contains freeze or patch case insensitive
-   if (item.name =~ Full_Name){
+   if (item.name ==~ /AS.*/){
        item.delete()
        println(&quot;AAAAA&quot;);
     }
