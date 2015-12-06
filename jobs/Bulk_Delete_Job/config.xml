@@ -38,7 +38,7 @@ def thr = Thread.currentThread()
 def build = thr?.executable
 
 
-println REGEX is build.environment.get(&quot;currentJobName&quot;)
+println REGEX is build.environment.get(&quot;Include_Regex&quot;)
 
 //Full_Name = &apos;AS_Deployer_&apos; + build.environment.get(&quot;currentJobName&quot;)
 
