@@ -45,12 +45,11 @@ ServerNames = tmpStringArray
 for server in ServerNames:
 #    jenkisURL.build_job(&apos;CreateASDeploymentJob&apos;, {&apos;currentJobName&apos;: server})
 	print (&quot;============================&quot;)        
-    print (server)        
-    
-    
+    print (server)
+
 #tmpStringArray = str(os.environ[&apos;Servers_List&apos;]).strip().split(&apos;,&apos;)
 
-#print (tmpStringArray)    </command>
+#print (tmpStringArray)</command>
     </hudson.plugins.python.Python>
   </builders>
   <publishers/>
