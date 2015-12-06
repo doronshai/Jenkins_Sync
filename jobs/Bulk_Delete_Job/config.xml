@@ -41,13 +41,14 @@ String REGEX = build.environment.get(&quot;Include_Regex&quot;)
 
 println REGEX is build.environment.get(&quot;Include_Regex&quot;)
 
-//Full_Name = &apos;AS_Deployer_&apos; + build.environment.get(&quot;currentJobName&quot;)
+
+Full_Name = build.environment.get(&quot;Include_Regex&quot;)
 
 
 for (item in jenkins.items){
    println(&quot;\t ${item.name}&quot;);
    // Ignore project that contains freeze or patch case insensitive
-   if (item.name ==~ ${REGEX}){
+   if (item.name ==~ ${Full_Name}){
        item.delete()
        println(&quot;AAAAA&quot;);
     }
