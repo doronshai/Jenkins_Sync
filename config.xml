@@ -75,7 +75,7 @@
       <recurse>false</recurse>
     </listView>
   </views>
-  <primaryView>All</primaryView>
+  <primaryView>MultiJob Flow Generator</primaryView>
   <slaveAgentPort>0</slaveAgentPort>
   <label></label>
   <nodeProperties/>
