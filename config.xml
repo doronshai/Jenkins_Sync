@@ -75,6 +75,35 @@
       </columns>
       <recurse>false</recurse>
     </listView>
+    <hudson.plugins.nested__view.NestedView plugin="nested-view@1.14">
+      <owner class="hudson" reference="../../.."/>
+      <name>project-a</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <views>
+        <listView>
+          <owner class="hudson.plugins.nested_view.NestedView" reference="../../.."/>
+          <name>AS Deployers</name>
+          <filterExecutors>false</filterExecutors>
+          <filterQueue>false</filterQueue>
+          <properties class="hudson.model.View$PropertyList"/>
+          <jobNames>
+            <comparator class="hudson.util.CaseInsensitiveComparator"/>
+          </jobNames>
+          <jobFilters/>
+          <columns>
+            <hudson.views.StatusColumn/>
+            <hudson.views.WeatherColumn/>
+            <hudson.views.JobColumn/>
+            <hudson.views.LastSuccessColumn/>
+            <hudson.views.LastFailureColumn/>
+          </columns>
+          <includeRegex>AS.*</includeRegex>
+          <recurse>false</recurse>
+        </listView>
+      </views>
+    </hudson.plugins.nested__view.NestedView>
   </views>
   <primaryView>MultiJob Flow Generator</primaryView>
   <slaveAgentPort>0</slaveAgentPort>
