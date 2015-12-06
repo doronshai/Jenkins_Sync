@@ -38,7 +38,7 @@ def thr = Thread.currentThread()
 def build = thr?.executable
 
 
-String REGEX = build.environment.get(&quot;Include_Regex&quot;)
+REGEX = build.environment.get(&quot;Include_Regex&quot;)
 
 
 println(&quot;The Regex is ${REGEX}&quot;);
