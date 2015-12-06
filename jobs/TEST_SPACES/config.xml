@@ -47,7 +47,7 @@ print s
 
 
 
-String ServerNamesTrimmed = re.sub(&apos;[\s+]&apos;, &apos;&apos;, tmpStringArray)
+ServerNamesTrimmed = re.sub(&apos;[\s+]&apos;, &apos;&apos;, str(tmpStringArray))
 
 #ServerNames = tmpStringArray.strip()
 
