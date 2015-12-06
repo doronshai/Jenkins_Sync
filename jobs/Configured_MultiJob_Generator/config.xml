@@ -37,7 +37,8 @@ import os
 jenkisURL = Jenkins(&apos;http://52.16.252.198:8080/&apos;)
 
 tmpStringArray = os.environ[&apos;Servers_List&apos;].split(&apos;,&apos;)
-ServerNames = tmpStringArray
+    
+ServerNames = tmpStringArray.strip()
 
 for server in ServerNames:
     jenkisURL.build_job(&apos;CreateASDeploymentJob&apos;, {&apos;currentJobName&apos;: server})</command>
