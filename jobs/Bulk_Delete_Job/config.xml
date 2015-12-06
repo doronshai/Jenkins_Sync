@@ -39,14 +39,14 @@ def build = thr?.executable
 
 
 REGEX = build.environment.get(&quot;Include_Regex&quot;)
-
+d_REGEX = build.environment.get(&quot;Include_Regex&quot;)
 
 println(&quot;The Regex is ${REGEX}&quot;);
 
 for (item in jenkins.items){
    println(&quot;\t ${item.name}&quot;);
    // Ignore project that contains freeze or patch case insensitive
-   if (item.name ==~ ${REGEX}){
+   if (item.name ==~ d_REGEX){
        item.delete()
        println(&quot;AAAAA&quot;);
     }
