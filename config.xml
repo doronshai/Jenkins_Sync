@@ -91,6 +91,8 @@
       <properties class="hudson.model.View$PropertyList"/>
       <jobNames>
         <comparator class="hudson.util.CaseInsensitiveComparator"/>
+        <string>Bulk_Delete_Job</string>
+        <string>Delete_SCM_Failed_Changes</string>
       </jobNames>
       <jobFilters/>
       <columns>
