@@ -42,7 +42,7 @@ String REGEX = build.environment.get(&quot;Include_Regex&quot;)
 println REGEX is build.environment.get(&quot;Include_Regex&quot;)
 
 
-Full_Name = build.environment.get(&quot;Include_Regex&quot;)
+Full_Name = &quot;&apos;&quot; + build.environment.get(&quot;Include_Regex&quot;) + &quot;&apos;&quot; 
 
 
 for (item in jenkins.items){
