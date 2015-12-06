@@ -37,19 +37,10 @@ import re
 
 tmpStringArray = os.environ[&apos;Servers_List&apos;].split(&apos;,&apos;)
 
-s = &quot;  \t a string example\t  &quot;
 
-print s
+#ServerNamesTrimmed = re.sub(&apos; &apos;, &apos;&apos;, str(tmpStringArray))
 
-s = s.strip()
-
-print s
-
-
-
-ServerNamesTrimmed = re.sub(&apos; &apos;, &apos;&apos;, str(tmpStringArray))
-
-#ServerNames = tmpStringArray.strip()
+ServerNames = str(tmpStringArray).strip()
 
 for server in ServerNamesTrimmed:
     print (server)</command>
