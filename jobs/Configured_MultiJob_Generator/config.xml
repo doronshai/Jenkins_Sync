@@ -75,12 +75,16 @@ for server in ServerNames:
         print(line)</command>
     </hudson.plugins.python.Python>
     <javaposse.jobdsl.plugin.ExecuteDslScripts plugin="job-dsl@1.40">
-      <scriptText>nestedView(&apos;project-a&apos;) {
+      <scriptText>//Create a View
+nestedView(&apos;project-a&apos;) {
     views {
+        //Create a Nested View inside
         listView(&apos;AS Deployers&apos;) {
-            jobs {
+            //Add all jobs with AS at the begining
+            jobs {   
                 regex(/AS.*/)
             }
+            //Add the following columns
             columns {
                 status()
                 weather()
