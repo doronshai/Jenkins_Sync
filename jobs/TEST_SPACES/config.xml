@@ -40,7 +40,7 @@ tmpStringArray = os.environ[&apos;Servers_List&apos;].split(&apos;,&apos;)
 
 #ServerNamesTrimmed = re.sub(&apos; &apos;, &apos;&apos;, str(tmpStringArray))
 
-ServerNames = str(tmpStringArray).strip()
+ServerNamesTrimmed = str(tmpStringArray).strip()
 
 for server in ServerNamesTrimmed:
     print (server)</command>
