@@ -9,7 +9,7 @@
         <hudson.model.StringParameterDefinition>
           <name>Servers_List</name>
           <description></description>
-          <defaultValue>10.10.10.11,10.10.10.12, 10.10.10.13</defaultValue>
+          <defaultValue>10.10.10.11,10.10.10.12,10.10.10.13</defaultValue>
         </hudson.model.StringParameterDefinition>
       </parameterDefinitions>
     </hudson.model.ParametersDefinitionProperty>
