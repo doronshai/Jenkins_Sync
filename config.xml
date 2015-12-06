@@ -85,6 +85,8 @@
       <properties class="hudson.model.View$PropertyList"/>
       <jobNames>
         <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView[2]/jobNames/comparator"/>
+        <string>Configured_MultiJob_Generator</string>
+        <string>CreateASDeploymentJob</string>
       </jobNames>
       <jobFilters/>
       <columns>
