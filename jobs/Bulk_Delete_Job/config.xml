@@ -9,7 +9,7 @@
         <hudson.model.StringParameterDefinition>
           <name>Include_Regex</name>
           <description></description>
-          <defaultValue>/AS.*/</defaultValue>
+          <defaultValue>AS.*</defaultValue>
         </hudson.model.StringParameterDefinition>
       </parameterDefinitions>
     </hudson.model.ParametersDefinitionProperty>
@@ -42,7 +42,7 @@ println &quot;REGEX is &quot; + REGEX
 for (item in jenkins.items){
    println(&quot;\t ${item.name}&quot;);
    println(&quot;\t ${item.name.getClass()}&quot;);
-   if (item.name ==~ /AS.*/){
+   if (item.name ==~ REGEX){  
        item.delete()
        println(&quot;AAAAA&quot;);
     }
