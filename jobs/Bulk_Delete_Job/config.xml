@@ -38,17 +38,19 @@ def thr = Thread.currentThread()
 def build = thr?.executable
 
 
+
+
 REGEX = build.environment.get(&quot;Include_Regex&quot;)
 d_REGEX = build.environment.get(&quot;Include_Regex&quot;)
 
 println(&quot;The Regex is ${REGEX}&quot;);
 
-println(&quot;The Regex is ${d_REGEX}&quot;);
+println(&quot;The n_REGEX is ${n_REGEX}&quot;);
 
 for (item in jenkins.items){
    println(&quot;\t ${item.name}&quot;);
    // Ignore project that contains freeze or patch case insensitive
-   if (item.name ==~ ${d_REGEX}){
+   if (item.name ==~ ${n_REGEX}){
        item.delete()
        println(&quot;AAAAA&quot;);
     }
@@ -56,7 +58,7 @@ for (item in jenkins.items){
 } 
 </command>
       </scriptSource>
-      <bindings></bindings>
+      <bindings>n_REGEX=$Include_Regex</bindings>
       <classpath></classpath>
     </hudson.plugins.groovy.SystemGroovy>
   </builders>
