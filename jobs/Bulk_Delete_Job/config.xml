@@ -39,12 +39,11 @@ String REGEX = build.environment.get(&quot;Include_Regex&quot;)
 
 println &quot;REGEX is &quot; + REGEX
 
-
 for (item in jenkins.items){
    println(&quot;\t ${item.name}&quot;);
    // Ignore project that contains freeze or patch case insensitive
 //   if (item.name ==~ /AS.*/){
-   if (item.name ==~ REGEX.toString()){  
+   if (item.name ==~ REGEX){  
        item.delete()
        println(&quot;AAAAA&quot;);
     }
