@@ -37,6 +37,16 @@ import re
 
 tmpStringArray = os.environ[&apos;Servers_List&apos;].split(&apos;,&apos;)
 
+s = &quot;  \t a string example\t  &quot;
+
+print s
+
+s = s.strip()
+
+print s
+
+
+
 String ServerNamesTrimmed = re.sub(&apos;[\s+]&apos;, &apos;&apos;, tmpStringArray)
 
 #ServerNames = tmpStringArray.strip()
