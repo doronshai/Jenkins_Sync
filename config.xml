@@ -61,6 +61,7 @@
         <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView/jobNames/comparator"/>
         <string>Configured_MultiJob_Generator</string>
         <string>CreateASDeploymentJob</string>
+        <string>TEST_SPACES</string>
       </jobNames>
       <jobFilters/>
       <columns>
