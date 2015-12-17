@@ -9,7 +9,7 @@
         <hudson.model.StringParameterDefinition>
           <name>Servers_List</name>
           <description></description>
-          <defaultValue>10.10.10.11,10.10.10.12,10.10.10.13</defaultValue>
+          <defaultValue>10.10.10.11,10.10.10.12, 10.10.10.13</defaultValue>
         </hudson.model.StringParameterDefinition>
       </parameterDefinitions>
     </hudson.model.ParametersDefinitionProperty>
@@ -37,7 +37,6 @@ import os
 jenkisURL = Jenkins(&apos;http://52.16.252.198:8080/&apos;)
 
 tmpStringArray = os.environ[&apos;Servers_List&apos;].split(&apos;,&apos;)
-
 ServerNames = tmpStringArray
 
 for server in ServerNames:
@@ -74,34 +73,6 @@ for server in ServerNames:
         line = re.sub(&apos;Job_Name&apos;,server, line.rstrip())  # Set the correct job Name
         print(line)</command>
     </hudson.plugins.python.Python>
-    <javaposse.jobdsl.plugin.ExecuteDslScripts plugin="job-dsl@1.40">
-      <scriptText>//Create a View
-nestedView(&apos;project-a&apos;) {
-    views {
-        //Create a Nested View inside
-        listView(&apos;AS Deployers&apos;) {
-            //Add all jobs with AS at the begining
-            jobs {   
-                regex(/AS.*/)
-            }
-            //Add the following columns
-            columns {
-                status()
-                weather()
-                name()
-                lastSuccess()
-                lastFailure()
-            }
-        }
-    }
-}</scriptText>
-      <usingScriptText>true</usingScriptText>
-      <ignoreExisting>false</ignoreExisting>
-      <removedJobAction>IGNORE</removedJobAction>
-      <removedViewAction>IGNORE</removedViewAction>
-      <lookupStrategy>JENKINS_ROOT</lookupStrategy>
-      <additionalClasspath></additionalClasspath>
-    </javaposse.jobdsl.plugin.ExecuteDslScripts>
   </builders>
   <publishers>
     <hudson.tasks.ArtifactArchiver>
